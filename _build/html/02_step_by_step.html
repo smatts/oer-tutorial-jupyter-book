@@ -1,0 +1,724 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Step by step tutorial &#8212; OER Tutorial</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '02_step_by_step';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Reference" href="03_reference.html" />
+    <link rel="prev" title="Quick Start" href="01_quick_start.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="00_intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.svg" class="logo__image only-light" alt="OER Tutorial - Home"/>
+    <script>document.write(`<img src="_static/logo.svg" class="logo__image only-dark" alt="OER Tutorial - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_intro.html">
+                    Create and publish OER with GitHub
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_quick_start.html">Quick Start</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Step by step tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_reference.html">Reference</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F02_step_by_step.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/02_step_by_step.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Step by step tutorial</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-github-account">Create a GitHub account</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown">Markdown</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-project">Create a project</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#video-tutorial">Video tutorial</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fill-with-content">Fill with content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-and-where-to-upload-your-own-content">How and where to upload your own content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-not-to-do">What not to do</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensuring-the-correct-order">Ensuring the correct order</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-can-i-not-see-the-updated-content">Why can I not see the updated content?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-output">Generate output</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-actions">What are Actions?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-pages">What are Pages?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Video tutorial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-your-metadata">Add your metadata</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#video-update-the-metadata">Video: Update the metadata</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-your-oer-in-oersi">Insert your OER in OERSI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#done">Done!</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="step-by-step-tutorial">
+<h1>Step by step tutorial<a class="headerlink" href="#step-by-step-tutorial" title="Link to this heading">#</a></h1>
+<p>In this step by step tutorial we’ll cover the following steps:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#requirements"><span class="xref myst">Requirements</span></a></p></li>
+<li><p><a class="reference internal" href="#create-a-project"><span class="xref myst">Create a project</span></a></p></li>
+<li><p><a class="reference internal" href="#fill-with-content"><span class="xref myst">Fill with your own content</span></a></p></li>
+<li><p><a class="reference internal" href="#generate-output"><span class="xref myst">Generate output</span></a></p></li>
+<li><p><a class="reference internal" href="#add-your-metadata"><span class="xref myst">Add your metadata</span></a></p></li>
+<li><p><a class="reference internal" href="#configuration-options"><span class="xref myst">Configuration options</span></a></p></li>
+<li><p><a class="reference internal" href="#insert-your-oer-in-oersi"><span class="xref myst">Insert into OERSI</span></a></p></li>
+</ul>
+<blockquote>
+<div><p>After completing all of these steps, you will have your OER hosted on GitHub and listed in OERSI.</p>
+</div></blockquote>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>For this tutorial, <strong>you will need a GitHub account</strong>. It is also recommended to <strong>get to know Markdown</strong>, a markup language which can create formatted text using only plain-text, since Markdown is used to write and format your content.</p>
+<p>If you already have a GitHub account and know basic markdown syntax, you can skip this part and directly go do <a class="reference internal" href="#create-a-project"><span class="xref myst">Create a project</span></a>.</p>
+</div></blockquote>
+</section>
+<section id="create-a-github-account">
+<h2>Create a GitHub account<a class="headerlink" href="#create-a-github-account" title="Link to this heading">#</a></h2>
+<p>If you don’t have an account yet, go to <a class="reference external" href="https://github.com/">GitHub</a> and sign up. Confirm your e-mail address and log in.</p>
+</section>
+<section id="markdown">
+<h2>Markdown<a class="headerlink" href="#markdown" title="Link to this heading">#</a></h2>
+<p>From Matt Cone’s <a class="reference external" href="https://www.markdownguide.org/getting-started/">Markdown guide</a>:</p>
+<blockquote>
+<div><p>Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. Created by John Gruber in 2004, Markdown is now one of the world’s most popular markup languages.</p>
+<p>Using Markdown is different than using a WYSIWYG editor. In an application like Microsoft Word, you click buttons to format words and phrases, and the changes are visible immediately. Markdown isn’t like that. When you create a Markdown-formatted file, you add Markdown syntax to the text to indicate which words and phrases should look different.</p>
+<p>For example, to denote a heading, you add a number sign before it (e.g., # Heading One). Or to make a phrase bold, you add two asterisks before and after it (e.g., <strong>this text is bold</strong>). It may take a while to get used to seeing Markdown syntax in your text, especially if you’re accustomed to WYSIWYG applications.</p>
+</div></blockquote>
+<p>If you want to learn about Markdown, what it is and what you can do with it, you can read this guide: <a class="reference external" href="https://www.markdownguide.org/getting-started/">Get Started</a>.</p>
+<p>To see basic formatting options, check out the <a class="reference external" href="https://www.markdownguide.org/cheat-sheet/">Cheat Sheet</a>. More basic syntax can be found in the <a class="reference external" href="https://www.markdownguide.org/basic-syntax/">Basic Syntax</a> guide.</p>
+<p>Some of the basic Markdown syntax is shown in the reference part of this tutorial: <a class="reference internal" href="#markdown-1"><span class="xref myst">Reference: Markdown</span></a>.</p>
+</section>
+<section id="create-a-project">
+<h2>Create a project<a class="headerlink" href="#create-a-project" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>The place where you will put your OER is called a <code class="docutils literal notranslate"><span class="pre">repository</span></code>. You can think of it as a project where all your files are located.</p>
+</div></blockquote>
+<p>Once you are logged into GitHub, go to the <a class="reference external" href="https://github.com/TIBHannover/markdown-documents-template">TIB Hannover markdown documents template repository</a> and click on “Use this template” -&gt; “Create a new repository”.</p>
+<p><img alt="Create repository" src="_images/create-repository.png" /></p>
+<p>Assign the repository to the correct owner and give it a short but meaningful name. The name will be the URL of the repository as well. You can add a description if you want. Now make sure that the visibility of the repository is set to <strong>public</strong>. This has two main reasons: firstly, so people can see your OER, and secondly to use the GitHub pages functionality which we will get to later. Lastly, confim by clicking on “Create repository from template”.</p>
+<p>Now, a new repository is initialized for you containing the contents from the template.</p>
+<section id="video-tutorial">
+<h3>Video tutorial<a class="headerlink" href="#video-tutorial" title="Link to this heading">#</a></h3>
+<p><video width="100%" src="_static/videos/create-from-template.mp4" controls></video></p>
+</section>
+</section>
+<section id="fill-with-content">
+<h2>Fill with content<a class="headerlink" href="#fill-with-content" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>Currently, there is still dummy data inside your repository. The next step is to replace this dummy data with your actual OER.</p>
+</div></blockquote>
+</section>
+<section id="how-and-where-to-upload-your-own-content">
+<h2>How and where to upload your own content<a class="headerlink" href="#how-and-where-to-upload-your-own-content" title="Link to this heading">#</a></h2>
+<p>In the repository, you can find four <code class="docutils literal notranslate"><span class="pre">chapterXX.md</span></code> files. These are our dummy content files.
+You can either edit or delete them. You can of course create new files, too.
+If you create new files, make sure that they end with the correct file format ending <code class="docutils literal notranslate"><span class="pre">.md</span></code>, so <code class="docutils literal notranslate"><span class="pre">filename.md</span></code>.</p>
+<p>To edit a file, click on the file name in the index of your repository.</p>
+<p><img alt="Change content" src="_images/edit-file-1.png" /></p>
+<p>Then, in the top right corner of the file, click on the pen button to edit the file.</p>
+<p><img alt="Change content" src="_images/edit-file-2.png" /></p>
+<p>Now, you can replace the content with your own. Add as much as you like.
+The file is a <code class="docutils literal notranslate"><span class="pre">Markdown</span></code> file, so you should write your content using this markup language.
+You can find more about Markdown in the <a class="reference internal" href="#markdown-1"><span class="xref myst">Markdown section</span></a> in the reference part of this tutorial.</p>
+<p>Once you are done, you can save your changes by clicking on the green <code class="docutils literal notranslate"><span class="pre">Commit</span> <span class="pre">changes...</span></code> button in the top right corner.</p>
+<p><img alt="Change content" src="_images/commit-changes-1.png" /></p>
+<p>Add a meaningful but short commit message, which is a message describing the changes you have made, and optionally a longer description.
+Then confirm by clicking the green <code class="docutils literal notranslate"><span class="pre">Commit</span> <span class="pre">changes</span></code> button.</p>
+<p><img alt="Change content" src="_images/commit-changes-2.png" /></p>
+</section>
+<section id="what-not-to-do">
+<h2>What not to do<a class="headerlink" href="#what-not-to-do" title="Link to this heading">#</a></h2>
+<p>Using emojis or other unicode characters can break the build.</p>
+</section>
+<section id="ensuring-the-correct-order">
+<h2>Ensuring the correct order<a class="headerlink" href="#ensuring-the-correct-order" title="Link to this heading">#</a></h2>
+<p>By default, the automatic generator will look for all Markdown files (so those ending with <code class="docutils literal notranslate"><span class="pre">.md</span></code>) in the top-level of the repository except for the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file, order them alphabetically and create the different output formats by appending them in this order. If you want to upload multiple content files, you will either have to:</p>
+<ul class="simple">
+<li><p>adapt the names of the files so that they will be ordered correctly alphabetically, for example:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">01_Introduction.md</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">02_Some-Chapter.md</span></code></p></li>
+<li><p>…</p></li>
+</ul>
+</li>
+<li><p>or you will have to list every file in the correct order in <code class="docutils literal notranslate"><span class="pre">config.yml</span></code>.</p></li>
+</ul>
+<p>You can learn more about that in the <a class="reference internal" href="#configuration-options"><span class="xref myst">Configuration options</span></a> section in the reference part of this tutorial.</p>
+</section>
+<section id="why-can-i-not-see-the-updated-content">
+<h2>Why can I not see the updated content?<a class="headerlink" href="#why-can-i-not-see-the-updated-content" title="Link to this heading">#</a></h2>
+<p>If you have committed all your changes and still can not see them on your generated landing page and documents, try deleting the cache and reload the page (or open your page in a new private tab). A shortcut to reload and refresh at the same time is <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">F5</span></code>.</p>
+<p>Please note that changes can take a few minutes to be built into the generated documents.</p>
+<p>If it still does not work, check your document for forbidden characters (such as emojis or other unicode characters) and ensure that the names of your Markdown files do not contain spaces or other unsuitable characters for filenames, as both can break the document generation scripts.</p>
+</section>
+<section id="generate-output">
+<h2>Generate output<a class="headerlink" href="#generate-output" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>The automatic generation will take your content (everything inside the <code class="docutils literal notranslate"><span class="pre">Markdown</span></code> files, so those ending with <code class="docutils literal notranslate"><span class="pre">.md</span></code>) and generate different output formats. For example, these include a <strong>web page</strong> and a <strong>pdf</strong> version of your OER and are publicly accessible. This generation is done each time you change something in your repository, so your content will always be up to date.</p>
+</div></blockquote>
+<p>In order to generate the different output formats for your OER, go to the project’s <code class="docutils literal notranslate"><span class="pre">Settings</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Pages</span></code> and in <code class="docutils literal notranslate"><span class="pre">Build</span> <span class="pre">and</span> <span class="pre">Development</span></code> set the source to <code class="docutils literal notranslate"><span class="pre">GitHub</span> <span class="pre">Actions</span></code>. After this, you can head to the <code class="docutils literal notranslate"><span class="pre">Actions</span></code> tab and click on the newest workflow run. If the worklow already ran, you will find that it failed. This happened because the Pages were not enabled yet. In this case, click on re-run jobs. Otherwise, wait until the jobs have finished. The pages and documents are now created. They can be accessed by the link that appeared under the <code class="docutils literal notranslate"><span class="pre">deploy</span></code> step.</p>
+<p>Congratulations, you now have a complete course/document that you can make your own!</p>
+<section id="what-are-actions">
+<h3>What are Actions?<a class="headerlink" href="#what-are-actions" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>An <code class="docutils literal notranslate"><span class="pre">Action</span></code> is something that GitHub can execute with every commit (save) you make to the repository. This includes the generation of documents or pages, which we are using in this tutorial.</p>
+<p>A more detailed explanation of GitHub Actions can be found here: <a class="reference external" href="https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions">Understanding GitHub Actions</a>.</p>
+</div></blockquote>
+</section>
+<section id="what-are-pages">
+<h3>What are Pages?<a class="headerlink" href="#what-are-pages" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>A <code class="docutils literal notranslate"><span class="pre">Page</span></code> is a public website hosted by GitHub. We can use GitHub Actions to automatically generate our website and then host it on GitHub Pages for everyone to see. You can either host your site for free on <code class="docutils literal notranslate"><span class="pre">your-username.github.io</span></code> or use your own costum domain.</p>
+<p>More information on GitHub Pages can be found here: <a class="reference external" href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages">About GitHub Pages</a>.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="id1">
+<h2>Video tutorial<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p><video width="100%" src="_static/videos/pages.mp4" controls></video></p>
+</section>
+<section id="add-your-metadata">
+<h2>Add your metadata<a class="headerlink" href="#add-your-metadata" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>Metadata is the data describing your OER. This includes information like the title, author, license and much more. If you don’t supply metadata with your repository, it is unclear what your OER is about, who it is from, if and how your OER can be used and so on. This is why we have a <code class="docutils literal notranslate"><span class="pre">metadata.yml</span></code> file in our repository. This file lets us include the information about the OER directly in the repository. This is also necessary for inserting your OER into a search index like <a class="reference external" href="https://oersi.org">OERSI</a>. This section shows how to replace the dummy metadata in the repository with the correct metadata describing your OER.</p>
+</div></blockquote>
+<p>Perhaps the easiest way to generate your own metadata for your repository in the correct format is to use the <a class="reference external" href="https://oersi.gitlab.io/metadata-form/metadata-generator.html">OERSI metadata generator</a> and fill out at least all required fields, but try to fill out as much as you can.</p>
+<p><img alt="Metadata generator" src="_images/metadata-form.png" /></p>
+<p>Now at the bottom of the page, you can click on <code class="docutils literal notranslate"><span class="pre">Generate</span></code>. This generates the metadata in the correct format. You can then copy the output to your clipboard either by using the <code class="docutils literal notranslate"><span class="pre">Copy</span></code> button, or by selecting the whole text (<code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">A</span></code>) and copying it (<code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code>).</p>
+<p><img alt="Copy output to clipboard" src="_images/metadata-copy-to-clipboard.png" /></p>
+<p>In your GitHub repository, edit the <code class="docutils literal notranslate"><span class="pre">metadata.yml</span></code> file. Now delete the whole file content and paste the output of the generator.
+To save, click on <code class="docutils literal notranslate"><span class="pre">Commit</span> <span class="pre">changes...</span></code> in the top right corner. Confirm by clicking on <code class="docutils literal notranslate"><span class="pre">Commit</span> <span class="pre">changes</span></code>.</p>
+<section id="video-update-the-metadata">
+<h3>Video: Update the metadata<a class="headerlink" href="#video-update-the-metadata" title="Link to this heading">#</a></h3>
+<p><video width="100%" src="_static/videos/metadata-placeholder.mp4" controls></video></p>
+</section>
+</section>
+<section id="insert-your-oer-in-oersi">
+<h2>Insert your OER in OERSI<a class="headerlink" href="#insert-your-oer-in-oersi" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>Let’s assume that…</p>
+<ul class="simple">
+<li><p>you have put your whole completed course or document content into the repository, and it’s either ordered alphabetically or you have defined the correct order in the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file,</p></li>
+<li><p>you have enabled the <code class="docutils literal notranslate"><span class="pre">Pages</span></code> for <code class="docutils literal notranslate"><span class="pre">GitHub</span> <span class="pre">Actions</span></code> and there are no errors during Action execution, thus you have a published Page that represents the current version of your repository,</p></li>
+<li><p>you have entered full and correct metadata, ensuring the license is correct and you are not violating another work’s license with this license,</p></li>
+<li><p>inside your <code class="docutils literal notranslate"><span class="pre">metadata.yml</span></code> file, you have set your creative work status to <code class="docutils literal notranslate"><span class="pre">Published</span></code> and the educational level to <code class="docutils literal notranslate"><span class="pre">University</span></code>,</p></li>
+</ul>
+<p><strong>then you are ready to put your OER into OERSI!</strong></p>
+</div></blockquote>
+<p>To put your course into the Open Ecucational Resources Search Index (OERSI), head to the <code class="docutils literal notranslate"><span class="pre">About</span></code> settings in the index of your repository. Then in <code class="docutils literal notranslate"><span class="pre">Topics</span></code>, add <code class="docutils literal notranslate"><span class="pre">open-educational-resources</span></code>.</p>
+<p><img alt="About settings" src="_images/about.png" /></p>
+<p><img alt="Set the topic" src="_images/about-topics.png" /></p>
+<p>The <a class="reference external" href="https://oersi.org">OERSI</a> updates its index every night. So you will be able to find your OER the next day either through the search bar or by filtering using the filters on the left (e.g. search for your name in <code class="docutils literal notranslate"><span class="pre">Author</span></code> or setting the <code class="docutils literal notranslate"><span class="pre">Provider</span></code> to GitHub to only show OER from GitHub).</p>
+<p>If you want to immediately see your changes in the OERSI, you can use the <a class="reference external" href="https://oersi.org/resources/pages/de/record_update/">record updater</a>.</p>
+<p>To take the OER out of OERSI, simply set the status (<code class="docutils literal notranslate"><span class="pre">creativeWorkStatus</span></code>) in the <code class="docutils literal notranslate"><span class="pre">metadata.yml</span></code> to <code class="docutils literal notranslate"><span class="pre">Draft</span></code> or <code class="docutils literal notranslate"><span class="pre">Incomplete</span></code> (or alternatively, you could remove the topic <code class="docutils literal notranslate"><span class="pre">open-educational-resources</span></code>).</p>
+</section>
+<section id="done">
+<h2>Done!<a class="headerlink" href="#done" title="Link to this heading">#</a></h2>
+<p>Congratulations, you did it!</p>
+<p>If you want to learn more about what you can do with this template, you can continue with the <a class="reference internal" href="#reference"><span class="xref myst">reference</span></a> part.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="01_quick_start.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Quick Start</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="03_reference.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Reference</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-github-account">Create a GitHub account</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown">Markdown</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-project">Create a project</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#video-tutorial">Video tutorial</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fill-with-content">Fill with content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-and-where-to-upload-your-own-content">How and where to upload your own content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-not-to-do">What not to do</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensuring-the-correct-order">Ensuring the correct order</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-can-i-not-see-the-updated-content">Why can I not see the updated content?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-output">Generate output</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-actions">What are Actions?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-pages">What are Pages?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Video tutorial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-your-metadata">Add your metadata</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#video-update-the-metadata">Video: Update the metadata</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-your-oer-in-oersi">Insert your OER in OERSI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#done">Done!</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Sophie Matter
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

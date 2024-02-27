@@ -1,0 +1,9 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: 00_intro
+chapters:
+ - file: 01_quick_start
+ - file: 02_step_by_step
+ - file: 03_reference
