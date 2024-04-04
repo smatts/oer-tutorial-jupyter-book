@@ -8,58 +8,9 @@
 In this part of the tutorial, we highlight further configuration options, Markdown basics, workflows in GitHub and much more.
 
 ## Configuration options
-> In the repository, there is a file called `config.yml`. This gives you some configuration options concerning the automatic generation of your OER, like the order of your content.
+> In the repository, there is a file called `_config.yml`. This gives you many configuration options. For all options, head to the [Jupyter Book configuration reference](https://jupyterbook.org/en/stable/customize/config.html).
 
-In the top level of the repository, there is a file named `config.yml`. It includes configuration for these four things:
-
-* `output`: state the output formats that you want to be automatically generated
-* `generate_landingpage`: decide whether or not to create a landing page
-* `content_files`: define the order of your content files
-* `generate_reuse_note`: decide whether or not to generate a reuse note on the generated documents
-
-### Editing this file
-
-As you are editing this file, you have to consider the format of this file. This file is a `yaml` file. This file has a specific structure you have to follow, or else the automatic generator will not work.
-
-As you can see when opening the file, the structure looks like this:
-
-``` yaml
-output:
-  - format: asciidoc
-  - format: epub
-  - format: html
-  - format: pdf
-generate_landingpage: true
-# content_files:  # uncomment this to set the order of the documents (default alphabetical)
-#   - chapter01.md
-#   - chapter02.md
-#   - chapter03.md
-#   - chapter04.md
-generate_reuse_note: true
-```
-
-So we have to consider the identation and the correct symbols to use. If we want to use the `content_files` option, we uncomment this by deleting the `#` before each line and removing the residual spaces:
-
-``` yaml
-output:
-  - format: asciidoc
-  - format: epub
-  - format: html
-  - format: pdf
-generate_landingpage: true
-content_files:  # uncomment this to set the order of the documents (default alphabetical)
-  - chapter01.md
-  - chapter02.md
-  - chapter03.md
-  - chapter04.md
-generate_reuse_note: true
-```
-
-The dashes (`-`) have to start with two spaces before the dash and then one space after the dash.
-Basically, just make sure the number of spaces is consistent throughout the whole file.
-
-### Video tutorial
-!?[Config file explained](videos/config.mp4)
+You do not have to set values like `title` or `author`, since they are automatically replaced with the values from the `metadata.yml` file.
 
 ## Markdown
 > For a good overview on what Markdown is and what you can do with it, you can check out the Markdown guide from Matt Cone:
@@ -303,21 +254,6 @@ Usually, this happens when you use an unsupported format. Stick to widespread fo
 ### Can I upload non-text files like PDF files?
 Yes, you can! Git however won't be able to track changes made to those files, it can only track _that_ it was changed.
 
-### How can I change how images are displayed?
-You can change image size, placement and more by using HTML-tags. HTML is, like Markdown, a markup language, basically converting plain text into formatted output.
-
-**Change image size**:
-
-`<img src="path/to/image.png" alt="Image description" style="width:100px"; />`
-
-The **src** contains the path to your image, the **alt** contains an image description, and the **style** contains the information about the image size. Here, we have set the **width** to **100 pixels**. You can also set the height (but note that setting a fixed width *and* height that does not match the original ratio of the image can skew it), and of course, change the size how you want.
-
-**Make text float around an image**:
-
-`<img src="path/to/image.png" alt="Image description" style="float: left; margin: 0 20px 20px 0;" />`
-
-Again, **src** contains the path to the image and **alt** its description. Now in the **style** tag, you find two directions: `float: left;` places your image on the left and allows other content like text to *float* around it. The tag `margin: 0 20px 20px 0;` is about spacing: you can set a margin around your image (or element in general), leaving that space blank. Here, the values for the margin are sorted top, right, bottom, left. So in this case, there is a margin of 20 pixels to the right and to the bottom. This prevents the text to directly "touch" your image, making it easier to read.
-
 ### Why are the direct paths to my files different?
 You may have encountered links containing `https://raw.githubusercontent.com/`. If you are wondering what this means and why GitHub changes your URL this way, the reason is the following:
 
@@ -325,4 +261,3 @@ When you go through your repository's files in GitHub, you see them embedded in 
 
 ### How can I create a new folder?
 You can not create an empty folder. This means you have to add files in GitHub *in* that new folder. Either create a new file and change the path to that new folder (i.e. instead of creating a new file `file.md`, write it with a new folder like `newfolder/file.md`, a new folder will be automatically created) or upload a non-empty folder.
-
