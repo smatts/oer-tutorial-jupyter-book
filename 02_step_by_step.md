@@ -41,7 +41,7 @@ Some of the basic Markdown syntax is shown in the reference part of this tutoria
 
 > The place where you will put your OER is called a `repository`. You can think of it as a project where all your files are located.
 
-Once you are logged into GitHub, go to the [TIB Hannover markdown documents template repository](https://github.com/TIBHannover/markdown-documents-template) and click on "Use this template" -> "Create a new repository".
+Once you are logged into GitHub, go to the [Jupyter OER Template](https://github.com/smatts/jupyter-oer-template/tree/main) and click on "Use this template" -> "Create a new repository".
 
 ![Create repository](_static/img/create-repository.png)
 
@@ -49,16 +49,17 @@ Assign the repository to the correct owner and give it a short but meaningful na
 
 Now, a new repository is initialized for you containing the contents from the template.
 
-#### Video tutorial
-<video width="100%" src="_static/videos/create-from-template.mp4" controls></video>
-
 ### Fill with content
 
 > Currently, there is still dummy data inside your repository. The next step is to replace this dummy data with your actual OER.
 
 ### How and where to upload your own content
 
-In the repository, you can find four `chapterXX.md` files. These are our dummy content files.
+In the repository, you can find two Markdown files that contain the book's contents. These are our dummy content files.
+
+* `00_intro.md`
+* `01_chapter.md`
+
 You can either edit or delete them. You can of course create new files, too.
 If you create new files, make sure that they end with the correct file format ending `.md`, so `filename.md`.
 
@@ -86,18 +87,47 @@ Then confirm by clicking the green `Commit changes` button.
 ### What not to do
 Using emojis or other unicode characters can break the build.
 
-### Ensuring the correct order
+### Listing your content files
 
-By default, the automatic generator will look for all Markdown files (so those ending with `.md`) in the top-level of the repository except for the `README.md` file, order them alphabetically and create the different output formats by appending them in this order. If you want to upload multiple content files, you will either have to:
+In order to get your content into your JupyterBook, it has to be listed in a file called `_toc.yml`.
+This file is your table of contents.
+List your content files in the order you want them to appear in.
+For example, this is the `_toc.yml` file from our template:
 
-* adapt the names of the files so that they will be ordered correctly alphabetically, for example:
+```yaml
+# In _toc.yml
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
 
-  * `01_Introduction.md`
-  * `02_Some-Chapter.md`
-  * ...
-* or you will have to list every file in the correct order in `config.yml`.
+format: jb-book
+root: 00_intro
+chapters:
+ - file: 01_chapter
+```
 
-You can learn more about that in the [Configuration options](#configuration-options) section in the reference part of this tutorial.
+We have two content files in this repository: `00_intro.md` and `01_chapter.md`.
+The `root` is the content that you see at the index of the book, so it is the first content of the book, the *root*.
+Then, you list the chapters in the order you want them to be in.
+If you want to add a new file called `02_chapter.md` to this list, you would add it under the ` - file: 01_chapter` entry.
+It is important that you use the same syntax here, so a space, a hyphen, a space and then `file:` with another space.
+In the end, it would look like this:
+
+```yaml
+# In _toc.yml
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: 00_intro
+chapters:
+ - file: 01_chapter
+ - file: 02_chapter
+```
+
+Note that the files themselves end with the `.md` markdown file ending, but in the `_toc.yml` table of contents file, we do not include this ending.
+
+There are plenty more options to configure your table of contents.
+You can find them in the JupyterBook documentation: [Structure the table of contents](https://jupyterbook.org/en/stable/structure/toc.html)
 
 ### Why can I not see the updated content?
 If you have committed all your changes and still can not see them on your generated landing page and documents, try deleting the cache and reload the page (or open your page in a new private tab). A shortcut to reload and refresh at the same time is `Ctrl + F5`.
@@ -108,9 +138,9 @@ If it still does not work, check your document for forbidden characters (such as
 
 ### Generate output
 
-> The automatic generation will take your content (everything inside the `Markdown` files, so those ending with `.md`) and generate different output formats. For example, these include a **web page** and a **pdf** version of your OER and are publicly accessible. This generation is done each time you change something in your repository, so your content will always be up to date.
+> The automatic generation will take your content and generate your book. This generation is done each time you change something in your repository, so your content will always be up to date.
 
-In order to generate the different output formats for your OER, go to the project's `Settings` -> `Pages` and in `Build and Development` set the source to `GitHub Actions`. After this, you can head to the `Actions` tab and click on the newest workflow run. If the worklow already ran, you will find that it failed. This happened because the Pages were not enabled yet. In this case, click on re-run jobs. Otherwise, wait until the jobs have finished. The pages and documents are now created. They can be accessed by the link that appeared under the `deploy` step.
+In order to generate the different output formats for your OER, go to the project's `Settings` -> `Pages` and in `Build and Development` set the source to `GitHub Actions`. After this, you can head to the `Actions` tab and click on the newest workflow run. If the worklow already ran, you will find that it failed. This happened because the Pages were not enabled yet. In this case, click on re-run jobs. Otherwise, wait until the jobs have finished. The pages and documents are now created.
 
 Congratulations, you now have a complete course/document that you can make your own!
 
@@ -121,12 +151,9 @@ Congratulations, you now have a complete course/document that you can make your 
 > A more detailed explanation of GitHub Actions can be found here: [Understanding GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions).
 
 #### What are Pages?
-> A `Page` is a public website hosted by GitHub. We can use GitHub Actions to automatically generate our website and then host it on GitHub Pages for everyone to see. You can either host your site for free on `your-username.github.io` or use your own costum domain.
+> A `Page` is a public website hosted by GitHub. We can use GitHub Actions to automatically generate our website and then host it on GitHub Pages for everyone to see. You can either host your site for free on `your-username.github.io` or use your own costum domain if you have one.
 >
 >More information on GitHub Pages can be found here: [About GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages).
-
-### Video tutorial
-<video width="100%" src="_static/videos/pages.mp4" controls></video>
 
 ### Add your metadata
 
